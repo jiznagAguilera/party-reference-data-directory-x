@@ -3361,8 +3361,52 @@ x-ibm-configuration:
       value: Ejecución Exitosa
     prop-msg-status-error:
       value: ERROR
+    prop-msg-mensaje-status-warn:
+      encoded: false
+      value: WARNING
+    prop-msg-mensaje-status-02:
+      encoded: false
+      value: WARNING
     prop-msg-campo-obligatorio:
       value: 'Campo Obligatorio: {headerName}'
+    # Propiedades adicionales desde consumer-loan-x que no estaban en party-reference
+    prop-msg-tipo-dato-incorrecto-cadena-numerica:
+      value: 'Tipo Dato Incorrecto:{headerName} debe ser una cadena de texto con formato de números.'
+      encoded: false
+    prop-msg-formato-fecha-incorrecto:
+      value: 'Tipo Dato Incorrecto:{headerName} no cumple con el formato de fecha DD/MM/YYYY hh:mm:ss.'
+      encoded: false
+    prop-msg-longitud-incorrecta-rango-decimales-parte-entera:
+      value: 'Longitud Incorrecta {headerName} debe tener entre {minInt}  y {maxInt} cifras en su parte entera.'
+      encoded: false
+    prop-msg-codigo-error-03-message:
+      value: 'Ocurrio un error con el backend'
+    prop-msg-status-error-code:
+      value: '03'
+    prop-msg-status-error-message:
+      value: 'Ocurrio un error con el backend'
+    prop-content-type-json:
+      value: 'application/json'
+    prop-content-type-urlencoded:
+      value: 'application/x-www-form-urlencoded'
+    prop-cache-control:
+      value: 'no-store'
+    prop-content-security-policy:
+      value: 'none'
+    prop-x-content-type-options:
+      value: 'nosniff'
+    prop-x-frame-options:
+      value: 'DENY'
+    prop-strict-transport-security:
+      value: 'max-age=15552000'
+    prop-http-status-400:
+      value: '400'
+    prop-http-reason-400:
+      value: 'Bad Request'
+    prop-http-status-500:
+      value: '500'
+    prop-http-reason-500:
+      value: 'Internal Server Error'
     prop-msg-tipo-dato-incorrecto-cadena-numerica:
       encoded: false
       value: >-
