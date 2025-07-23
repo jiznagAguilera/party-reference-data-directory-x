@@ -3369,10 +3369,8 @@ x-ibm-configuration:
       value: WARNING
     prop-msg-campo-obligatorio:
       value: 'Campo Obligatorio: {headerName}'
-    # Propiedades adicionales desde consumer-loan-x que no estaban en party-reference
-    prop-msg-tipo-dato-incorrecto-cadena-numerica:
-      value: 'Tipo Dato Incorrecto:{headerName} debe ser una cadena de texto con formato de números.'
-      encoded: false
+    prop-msg-tipo-dato-incorrecto-cadena:
+      value: Tipo Dato Incorrecto:{headerName} debe ser una cadena de texto.
     prop-msg-formato-fecha-incorrecto:
       value: 'Tipo Dato Incorrecto:{headerName} no cumple con el formato de fecha DD/MM/YYYY hh:mm:ss.'
       encoded: false
@@ -3412,16 +3410,6 @@ x-ibm-configuration:
       value: >-
         Tipo Dato Incorrecto:{headerName} debe ser una cadena de texto con
         formato de números.
-    prop-msg-formato-fecha-incorrecto:
-      encoded: false
-      value: >-
-        Tipo Dato Incorrecto:{headerName} no cumple con el formato de fecha
-        DD/MM/YYYY hh:mm:ss.
-    prop-msg-longitud-incorrecta-rango-decimales-parte-entera:
-      encoded: false
-      value: >-
-        Longitud Incorrecta {headerName} debe tener entre {minInt}  y {maxInt}
-        cifras en su parte entera.
     prop-msg-longitud-exacta-incorrecta:
       value: >-
         Longitud Incorrecta: {fieldName} debe tener una longitud exacta de
