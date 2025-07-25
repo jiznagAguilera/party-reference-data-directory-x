@@ -163,7 +163,6 @@ function validateRequestBody(requestBody) {
 
   return errors;
 }
-
 // Contexto simulado con las propiedades
 const context = {
   request: {
