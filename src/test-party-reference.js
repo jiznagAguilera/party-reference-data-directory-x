@@ -184,7 +184,6 @@ const context = {
     return properties[prop];
   }
 };
-
 // Función para ejecutar casos de prueba
 function runTests() {
     const testCases = [
