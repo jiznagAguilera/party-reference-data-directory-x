@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Party Reference Data Directory</title>
+</head>
+<body>
+    <style>
+        .test-case {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-case h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .success {
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        .error-list {
+            color: #a94442;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .test-form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #337ab7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #286090;
+        }
+    </style>
+    <h1>Test de Validaciones</h1>
+    
+    <div class="test-form">
+        <h2>Crear Nuevo Caso de Prueba</h2>
+        <div class="form-group">
+            <label>Nombre del Caso:</label>
+            <input type="text" id="testName" placeholder="Ej: Prueba de Content-Type inválido">
+        </div>
+        <h3>Headers</h3>
+        <div class="form-group">
+            <label>Content-Type:</label>
+            <input type="text" id="contentType" value="application/json">
+        </div>
+        <div class="form-group">
+            <label>UserId:</label>
+            <input type="text" id="userId" value="12345">
+        </div>
+        <div class="form-group">
+            <label>BranchCode:</label>
+            <input type="text" id="branchCode" value="BRANCH01">
+        </div>
+        
+        <h3>Body</h3>
+        <div class="form-group">
+            <label>ServiceType:</label>
+            <input type="text" id="serviceType" value="S00080">
+        </div>
+        <div class="form-group">
+            <label>PersonIdentificationType:</label>
+            <input type="text" id="personIdType" value="DNI">
+        </div>
+        <div class="form-group">
+            <label>PersonIdentification:</label>
+            <input type="text" id="personId" value="12345678">
+        </div>
+        
+        <button onclick="runCustomTest()">Ejecutar Prueba</button>
+        <button onclick="showAllTests()" style="margin-left: 10px; background-color: #5cb85c;">Ver Todas las Pruebas</button>
+    </div>
+
+    <div id="customResult"></div>
+    <div id="results" style="display: none;"></div>
+
+    <script src="test-party-reference.js"></script>
+    <script>
+        // Función para mostrar resultados en la página
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            let html = '<h2>Resultados de las pruebas:</h2>';
+            
+            results.forEach(result => {
+                const isSuccess = result.errors.length === 0;
+                html += `
+                    <div class="test-case ${isSuccess ? 'success' : 'error'}">
+                        <h3>${result.name}</h3>
+                        ${isSuccess 
+                            ? '<p>✓ Prueba exitosa - No se encontraron errores</p>'
+                            : `<p>✗ Se encontraron los siguientes errores:</p>
+                               <ul class="error-list">
+                                 ${result.errors.map(error => `<li>${error}</li>`).join('')}
+                               </ul>`
+                        }
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+
+        // Función para ejecutar un caso de prueba personalizado
+        function runCustomTest() {
+            const testCase = {
+                name: document.getElementById('testName').value || 'Caso de prueba personalizado',
+                request: {
+                    RetrievePartyReferenceDataDirectoryEntryNatural: {
+                        ServiceType: document.getElementById('serviceType').value,
+                        PersonIdentificationType: document.getElementById('personIdType').value,
+                        PersonIdentification: document.getElementById('personId').value
+                    }
+                },
+                headers: {
+                    "Content-Type": document.getElementById('contentType').value,
+                    "UserId": document.getElementById('userId').value,
+                    "BranchCode": document.getElementById('branchCode').value
+                }
+            };
+
+            // Actualizar headers del contexto
+            context.request.headers = testCase.headers;
+            
+            // Ejecutar validación
+            const errors = validateRequestBody(testCase.request);
+            
+            // Mostrar resultado solo de esta prueba
+            const customResultDiv = document.getElementById('customResult');
+            const isSuccess = !errors || errors.length === 0;
+            
+            customResultDiv.innerHTML = `
+                <h2>Resultado de la Prueba:</h2>
+                <div class="test-case ${isSuccess ? 'success' : 'error'}">
+                    <h3>${testCase.name}</h3>
+                    ${isSuccess 
+                        ? '<p>✓ Prueba exitosa - No se encontraron errores</p>'
+                        : `<p>✗ Se encontraron los siguientes errores:</p>
+                           <ul class="error-list">
+                             ${errors.map(error => `<li>${error}</li>`).join('')}
+                           </ul>`
+                    }
+                </div>
+            `;
+
+            // Ocultar resultados anteriores
+            document.getElementById('results').style.display = 'none';
+        }
+
+        // Función para mostrar todas las pruebas
+        function showAllTests() {
+            const customResultDiv = document.getElementById('customResult');
+            const resultsDiv = document.getElementById('results');
+            
+            // Limpiar resultado personalizado
+            customResultDiv.innerHTML = '';
+            
+            // Mostrar todas las pruebas
+            const results = runTests();
+            displayResults(results);
+            resultsDiv.style.display = 'block';
+        }
+
+        // Al cargar la página, no mostrar ningún resultado
+        window.onload = function() {
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('customResult').innerHTML = '';
+        };
+    </script>
+</body>
+</html>
