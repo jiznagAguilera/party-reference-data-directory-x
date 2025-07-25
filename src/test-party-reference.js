@@ -149,7 +149,6 @@ function validateRequestBody(requestBody) {
       errors.push(applyTemplate(context.get('api.properties.prop-msg-tipo-dato-incorrecto-cadena'), { headerName: "Address" }));
     }
   }
-
   // Para compatibilidad con pruebas anteriores (RetrievePartyReferenceDataDirectoryEntryNatural)
   if (requestBody.RetrievePartyReferenceDataDirectoryEntryNatural) {
     const body = requestBody.RetrievePartyReferenceDataDirectoryEntryNatural;
