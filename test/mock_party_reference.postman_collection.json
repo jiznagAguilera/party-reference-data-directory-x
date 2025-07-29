@@ -496,7 +496,396 @@
 		},
 		{
 			"name": "/entry/natural/retrieve/{ServiceType}/{CustomerReference}",
-			"item": []
+			"item": [
+				{
+					"name": "Caso exitoso - Todos los parámetros válidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserId",
+								"value": "12345"
+							},
+							{
+								"key": "BranchCode",
+								"value": "BRANCH01"
+							}
+						],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00080/12345678",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"retrieve",
+								"S00080",
+								"12345678"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00080/12345678",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"retrieve",
+										"S00080",
+										"12345678"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"RetrievePartyReferenceDataDirectoryEntryNaturalResponse\": {\n    \"CustomerReference\": \"12345678\",\n    \"PersonIdentificationType\": \"DNI\",\n    \"PersonIdentification\": \"12345678\",\n    \"FirstSurname\": \"PEREZ\",\n    \"FirstName\": \"JUAN\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "ServiceType longitud incorrecta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S123/12345678",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"retrieve",
+								"S123",
+								"12345678"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S123/12345678",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"retrieve",
+										"S123",
+										"12345678"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"Longitud Incorrecta: ServiceType debe tener una longitud exacta de 6\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ServiceType con caracteres especiales",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00@80/12345678",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"retrieve",
+								"S00@80",
+								"12345678"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00@80/12345678",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"retrieve",
+										"S00@80",
+										"12345678"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"Caracteres Especiales No Permitidos: ServiceType no puede contener caracteres especiales\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CustomerReference no string (número)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00@80/12345678",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"retrieve",
+								"S00@80",
+								"12345678"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00@80/12345678",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"retrieve",
+										"S00@80",
+										"12345678"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"Tipo Dato Incorrecto: CustomerReference debe ser una cadena de texto\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Headers inválidos",
+					"protocolProfileBehavior": {
+						"disableSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text",
+								"disabled": true
+							},
+							{
+								"key": "UserId",
+								"value": ""
+							},
+							{
+								"key": "BranchCode",
+								"value": "BR"
+							}
+						],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00080/12345633",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"retrieve",
+								"S00080",
+								"12345633"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/cmd",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/retrieve/S00080/12345678",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"retrieve",
+										"S00080",
+										"12345678"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"Longitud Incorrecta: Content-Type debe tener longitud entre 9 y 50\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"variable": [
