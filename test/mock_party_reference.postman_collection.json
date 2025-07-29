@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "08b8def8-b462-4188-ad99-e2cfe78ff86c",
+		"name": "mock_party_reference",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24380499"
+	},
+	"item": [
+		{
+			"name": "/associations/corporate/retrieve/{PersonIdentification}/{PersonIdentificationType}/{ServiceType}",
+			"item": [
+				{
+					"name": "Caso exitoso - Todos los parámetros válidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNI/LOAN",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"12345678",
+								"DNI",
+								"LOAN"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNI/PRÉSTAMO",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"12345678",
+										"DNI",
+										"PRÉSTAMO"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"RetrievePartyReferenceDataDirectoryAssociationsCorporateResponse\": {\n    \"UniqueTransactionIdentifier\": \"abc-123\",\n    \"TransactionDate\": \"2025-07-29T12:00:00Z\",\n    \"OrganisationName\": \"EMPRESA S.A.\",\n    \"EntityStatus\": \"ACTIVO\",\n    \"CustomerReference\": \"12345678\",\n    \"Amount\": 100000,\n    \"OrganisationType\": \"SOCIEDAD ANÓNIMA\",\n    \"FullLegalName\": \"EMPRESA S.A.\",\n    \"OrganisationIdentification\": \"20123456789\",\n    \"CumulativeAmount\": 500000,\n    \"ParentOrganisation\": []\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "PersonIdentification vacío",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve//DNI/LOAN",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"",
+								"DNI",
+								"LOAN"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve//DNI/LOAN",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"",
+										"DNI",
+										"LOAN"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo PersonIdentification es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PersonIdentification con caracteres especiales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/1234@5678/DNI/LOAN",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"1234@5678",
+								"DNI",
+								"LOAN"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/1234@5678/DNI/LOAN",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"1234@5678",
+										"DNI",
+										"LOAN"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo PersonIdentification no permite caracteres especiales.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PersonIdentificationType muy largo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNILARGO/LOAN",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"12345678",
+								"DNILARGO",
+								"LOAN"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNILARGO/LOAN",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"12345678",
+										"DNILARGO",
+										"LOAN"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"La longitud de PersonIdentificationType debe estar entre 1 y 4.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ServiceType vacío",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNI/",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"12345678",
+								"DNI",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNI/",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"12345678",
+										"DNI",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo ServiceType es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ServiceType con caracteres especiales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNI/LO@N",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"12345678",
+								"DNI",
+								"LO@N"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/12345678/DNI/LO@N",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"12345678",
+										"DNI",
+										"LO@N"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo ServiceType no permite caracteres especiales.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PersonIdentification muy largo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/1234567890123/DNI/LOAN",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"associations",
+								"corporate",
+								"retrieve",
+								"1234567890123",
+								"DNI",
+								"LOAN"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/associations/corporate/retrieve/1234567890123/DNI/LOAN",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"associations",
+										"corporate",
+										"retrieve",
+										"1234567890123",
+										"DNI",
+										"LOAN"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"La longitud de PersonIdentification debe estar entre 1 y 12.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/entry/natural/retrieve/{ServiceType}/{CustomerReference}",
+			"item": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io"
+		}
+	]
+}
