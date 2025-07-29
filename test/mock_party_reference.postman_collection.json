@@ -886,6 +886,1433 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "/reference/natural/retrieve",
+			"item": [
+				{
+					"name": "Caso exitoso - Todos los campos válidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"DocumentType\": \"DNI\",\n  \"DocumentNumber\": \"12345678\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"retrieve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"retrieve"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"RetrievePartyReferenceDataDirectoryReferenceNaturalResponse\": {\n    \"CustomerReference\": \"12345678\",\n    \"PersonIdentificationType\": \"DNI\",\n    \"PersonIdentification\": \"12345678\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "DocumentType vacío",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"DocumentType\": \"\",\n  \"DocumentNumber\": \"12345678\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"retrieve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"DocumentType\": \"\",\r\n  \"DocumentNumber\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"retrieve"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo DocumentType es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DocumentNumber vacío",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"DocumentType\": \"DNI\",\n  \"DocumentNumber\": \"\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"retrieve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"DocumentType\": \"DNI\",\r\n  \"DocumentNumber\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"retrieve"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo DocumentNumber es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Content-Type incorrecto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"DocumentType\": \"DNI\",\n  \"DocumentNumber\": \"12345678\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"retrieve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "415 Unsupported Media Type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"DocumentType\": \"DNI\",\r\n  \"DocumentNumber\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/retrieve",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"retrieve"
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"415\",\n  \"Message\": \"El header Content-Type debe ser application/json\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/entry/natural/register",
+			"item": [
+				{
+					"name": "Caso exitoso - Todos los campos válidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"RegisterPartyReferenceDataDirectoryEntryNaturalResponse\": {\n    \"CustomerReference\": \"12345678\",\n    \"FirstName\": \"JUAN\",\n    \"FirstSurname\": \"PEREZ\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "CustomerReference vacío",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo CustomerReference es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FirstName vacío",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo FirstName es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FirstSurname vacío",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo FirstSurname es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Content-Type incorrecto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"entry",
+								"natural",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "415 Unsupported Media Type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/entry/natural/register",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"entry",
+										"natural",
+										"register"
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"415\",\n  \"Message\": \"El header Content-Type debe ser application/json\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/reference/natural/update",
+			"item": [
+				{
+					"name": "Caso exitoso - Todos los campos válidos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 ok",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"UpdatePartyReferenceDataDirectoryReferenceNaturalResponse\": {\n    \"CustomerReference\": \"12345678\",\n    \"FirstName\": \"JUAN\",\n    \"FirstSurname\": \"PEREZ\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "CustomerReference vacío",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo CustomerReference es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FirstName vacío",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo FirstName es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FirstSurname vacío",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo FirstSurname es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Content-Type incorrecto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CustomerReference\": \"12345678\",\n  \"FirstName\": \"JUAN\",\n  \"FirstSurname\": \"PEREZ\"\n}"
+						},
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"reference",
+								"natural",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "415 Unsupported Media Type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerReference\": \"12345678\",\r\n  \"FirstName\": \"JUAN\",\r\n  \"FirstSurname\": \"PEREZ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/reference/natural/update",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"reference",
+										"natural",
+										"update"
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"415\",\n  \"Message\": \"El header Content-Type debe ser application/json\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/referenceregisteredplin/natural/retrieve/{ContactReference}/{DestinationWalletName}",
+			"item": [
+				{
+					"name": "Caso exitoso - Todos los parámetros válidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/referenceregisteredplin/natural/retrieve/9876543210/PLINWALLET",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"referenceregisteredplin",
+								"natural",
+								"retrieve",
+								"9876543210",
+								"PLINWALLET"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/referenceregisteredplin/natural/retrieve/9876543210/PLINWALLET",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"referenceregisteredplin",
+										"natural",
+										"retrieve",
+										"9876543210",
+										"PLINWALLET"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"RetrievePartyReferenceDataDirectoryReferenceRegisteredPlinNaturalResponse\": {\n    \"ContactReference\": \"9876543210\",\n    \"DestinationWalletName\": \"PLINWALLET\",\n    \"RegisteredName\": \"JUAN PEREZ\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "ContactReference vacío",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/referenceregisteredplin/natural/retrieve//PLINWALLET",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"referenceregisteredplin",
+								"natural",
+								"retrieve",
+								"",
+								"PLINWALLET"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/referenceregisteredplin/natural/retrieve//PLINWALLET",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"referenceregisteredplin",
+										"natural",
+										"retrieve",
+										"",
+										"PLINWALLET"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo ContactReference es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DestinationWalletName vacío",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/referenceregisteredplin/natural/retrieve/9876543210/",
+							"protocol": "https",
+							"host": [
+								"434339cc-0420-40ad-9270-6173465ec0ea",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"x",
+								"v1.0",
+								"partyreferencedatadirectory",
+								"referenceregisteredplin",
+								"natural",
+								"retrieve",
+								"9876543210",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://434339cc-0420-40ad-9270-6173465ec0ea.mock.pstmn.io/x/v1.0/partyreferencedatadirectory/referenceregisteredplin/natural/retrieve/9876543210/",
+									"protocol": "https",
+									"host": [
+										"434339cc-0420-40ad-9270-6173465ec0ea",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"x",
+										"v1.0",
+										"partyreferencedatadirectory",
+										"referenceregisteredplin",
+										"natural",
+										"retrieve",
+										"9876543210",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusCode\": \"400\",\n  \"Message\": \"El campo DestinationWalletName es obligatorio.\",\n  \"Status\": \"ERROR\"\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"variable": [
